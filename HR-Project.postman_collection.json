@@ -1,0 +1,2184 @@
+{
+	"info": {
+		"_postman_id": "c73ec4ab-f400-4f13-84a7-ffc602088cd8",
+		"name": "HR-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23920483",
+		"_collection_link": "https://blue-astronaut-410152.postman.co/workspace/My-Workspace~fbfa085c-7551-42fd-831e-028857c30980/collection/23920483-c73ec4ab-f400-4f13-84a7-ffc602088cd8?action=share&creator=23920483&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signout",
+					"item": [
+						{
+							"name": "signout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <Token>",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/auth/signout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"signout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "signout",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY4ODQ0MjQ4OSwiZXhwIjoxNjg4NTI4ODg5fQ.VKIp_IYHXvICl0deguaQ5TMOoY137KBZH0vLlErPUM4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:3000/api/auth/signout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"auth",
+												"signout"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "signin",
+					"item": [
+						{
+							"name": "signin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"uname\":\"PatrickMi\",\n    \"psw\":\"Qqwwee123!\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/auth/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "signin",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"uname\": \"Ayman99\",\n    \"psw\": \"Qqwwee123!\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/auth/signin",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"auth",
+												"signin"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "signup",
+					"item": [
+						{
+							"name": "signup",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"uname\": \"\",\n    \"email\": \"\",\n    \"psw\": \"\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "signup",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYUBnbWFpbC5jb20iLCJpYXQiOjE2ODg4MDIxNjQsImV4cCI6MTY4ODgxMjk2NH0.uxJVqzttTse7NAkSfIzVzqgH1xzbEH4Clzh1xvNZVTM",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"uname\": \"aaa\",\n    \"email\": \"aaa@gmail.com\",\n    \"psw\": \"P@ssW0rd!\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/auth/signup",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"auth",
+												"signup"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "signup link",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/auth/signup?token=string",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "signup link",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/auth/signup?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYUBnbWFpbC5jb20iLCJpYXQiOjE2ODg4MDIxNjQsImV4cCI6MTY4ODgxMjk2NH0.uxJVqzttTse7NAkSfIzVzqgH1xzbEH4Clzh1xvNZVTM",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"auth",
+												"signup"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFhYUBnbWFpbC5jb20iLCJpYXQiOjE2ODg4MDIxNjQsImV4cCI6MTY4ODgxMjk2NH0.uxJVqzttTse7NAkSfIzVzqgH1xzbEH4Clzh1xvNZVTM"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "check token",
+					"item": [
+						{
+							"name": "check_token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkJqYXJuZS5aZWlkbGVyQGhvdG1haWwuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY4ODk1OTUzOSwiZXhwIjoxNjg5MDQ1OTM5fQ.E946Vic5pq9UqzywPWDSEqoa7hs_TGcGe5ZnRPyKw14",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "string",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/auth/check_token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"auth",
+										"check_token"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "check_token",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "token",
+												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkRhbWlhbjg2QGhvdG1haWwuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY4ODc4MDY4MywiZXhwIjoxNjg4ODY3MDgzfQ.FbC7Ul52VSeU0skFEhOXGEp4BXtEWvrQevBSTJQ9358",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:3000/api/auth/check_token",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"auth",
+												"check_token"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e-KEFKosfmGlwCcgQdG1MpFD/LD4g\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Jul 2023 01:44:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"fail\",\n    \"message\": {}\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "hr",
+			"item": [
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "employee profile summary",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/hr/profile?token=string&identifier=any_key_name&val=value_wants_to_match",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"profile"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "string"
+										},
+										{
+											"key": "identifier",
+											"value": "any_key_name"
+										},
+										{
+											"key": "val",
+											"value": "value_wants_to_match"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "employee profile summary",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/hr/profile?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpdmlhbi5SZWlmZW5yYXRoQGhvdG1haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4OTI3MjQwLCJleHAiOjE2ODkwMTM2NDB9.apWFCLKusndifn1yi5FiBZrUuBrbHPWDjwSeSVbLN5I&identifier=email&val=gmail",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"profile"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpdmlhbi5SZWlmZW5yYXRoQGhvdG1haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4OTI3MjQwLCJleHAiOjE2ODkwMTM2NDB9.apWFCLKusndifn1yi5FiBZrUuBrbHPWDjwSeSVbLN5I"
+												},
+												{
+													"key": "identifier",
+													"value": "email"
+												},
+												{
+													"key": "val",
+													"value": "gmail"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "visa",
+					"item": [
+						{
+							"name": "employee visa summary",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/hr/visa?token=string&identifier=key_wants_to_find&val=values_wants_to_match&progress=\"In Progress\" | \"All\"",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"visa"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "string"
+										},
+										{
+											"key": "identifier",
+											"value": "key_wants_to_find"
+										},
+										{
+											"key": "val",
+											"value": "values_wants_to_match"
+										},
+										{
+											"key": "progress",
+											"value": "\"In Progress\" | \"All\""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "employee visa summary",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/hr/visa?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyNDA0LCJleHAiOjE2ODg4ODg4MDR9.XnRWoxBVdq5TNpJdOhc1FsKFj-QOJDKpJL1gJTO3fsg&identifier=fname&val=j&progress=In Progress",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"visa"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyNDA0LCJleHAiOjE2ODg4ODg4MDR9.XnRWoxBVdq5TNpJdOhc1FsKFj-QOJDKpJL1gJTO3fsg"
+												},
+												{
+													"key": "identifier",
+													"value": "fname"
+												},
+												{
+													"key": "val",
+													"value": "j"
+												},
+												{
+													"key": "progress",
+													"value": "In Progress"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "employee visa file status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <Token>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"\",\n    \"visa_status\": \"waiting pending approved rejected\",\n    \"visa_status_msg\": \"\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/hr/visa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"visa"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "employee visa file status",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1lbGlrZTU0QHlhaG9vLmNvbSIsInJvbGUiOiJociIsImlhdCI6MTY4ODg3NDI4OCwiZXhwIjoxNjg4OTYwNjg4fQ.rCqMiKhAzDHCea2GW-WGgoodpcrsogZj3p8wLa4SGEk",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"aaa@gmail.com\",\n    \"visa_status\": \"P@ssW0rd!\",\n    \"visa_status_msg\": \"dd\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/hr/visa",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"visa"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "hire",
+					"item": [
+						{
+							"name": "new employee list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/hr/hire_new?token=string",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"hire_new"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "new employee list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/hr/hire_new?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1pY2hhZWxhNkBnbWFpbC5jb20iLCJyb2xlIjoiaHIiLCJpYXQiOjE2ODg4NjI2NjcsImV4cCI6MTY4ODk0OTA2N30.y7WGcrC-5BB5N-NxXj-ElqWTKxmQxVQFap1KJ7jYK6Q",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"hire_new"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1pY2hhZWxhNkBnbWFpbC5jb20iLCJyb2xlIjoiaHIiLCJpYXQiOjE2ODg4NjI2NjcsImV4cCI6MTY4ODk0OTA2N30.y7WGcrC-5BB5N-NxXj-ElqWTKxmQxVQFap1KJ7jYK6Q"
+												},
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "employee onboarding list",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/hr/hire?token=string&status_filter=\"Not Started\" | \"Rejected\" | \"Pending\" | \"Approved\"&curPage=number&itemPerPage=number",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"hire"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "string"
+										},
+										{
+											"key": "status_filter",
+											"value": "\"Not Started\" | \"Rejected\" | \"Pending\" | \"Approved\""
+										},
+										{
+											"key": "curPage",
+											"value": "number"
+										},
+										{
+											"key": "itemPerPage",
+											"value": "number"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "employee onboarding list",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/hr/hire?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyMTExLCJleHAiOjE2ODg4ODg1MTF9.m2rIup4Xk1zXokF98tj42hxpynYWwDWRsfeq74NdbGE&status_filter=Rejected&curPage=1&itemPerPage=2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"hire"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyMTExLCJleHAiOjE2ODg4ODg1MTF9.m2rIup4Xk1zXokF98tj42hxpynYWwDWRsfeq74NdbGE"
+												},
+												{
+													"key": "status_filter",
+													"value": "Rejected"
+												},
+												{
+													"key": "curPage",
+													"value": "1"
+												},
+												{
+													"key": "itemPerPage",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "onboarding status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyMTExLCJleHAiOjE2ODg4ODg1MTF9.m2rIup4Xk1zXokF98tj42hxpynYWwDWRsfeq74NdbGE",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"Dominik_Wittl@hotmail.com\",\n    \"status\": \"Rejected\",\n    \"msg\": \"rejcted because some reason\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/hr/hire",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"hire"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "onboarding status",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyMTExLCJleHAiOjE2ODg4ODg1MTF9.m2rIup4Xk1zXokF98tj42hxpynYWwDWRsfeq74NdbGE",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"Dominik_Wittl@hotmail.com\",\n    \"status\": \"Rejected\",\n    \"msg\": \"rejcted because some reason\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/hr/hire",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"hire"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "employee registration link",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer <Token>",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"\",\n    \"name\":\"\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/hr/hire",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"hire"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "employee registration link",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyMTExLCJleHAiOjE2ODg4ODg1MTF9.m2rIup4Xk1zXokF98tj42hxpynYWwDWRsfeq74NdbGE",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"aaa@gmail.com\",\n    \"name\":\"aaa\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/hr/hire",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"hire"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "house",
+					"item": [
+						{
+							"name": "all house",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/hr/house?reports_order=\"ascending\" | \"descending\"&comments_order=\"ascending\" | \"descending\"&curPage=number&itemPerPage=number&token=string",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"house"
+									],
+									"query": [
+										{
+											"key": "reports_order",
+											"value": "\"ascending\" | \"descending\""
+										},
+										{
+											"key": "comments_order",
+											"value": "\"ascending\" | \"descending\""
+										},
+										{
+											"key": "curPage",
+											"value": "number"
+										},
+										{
+											"key": "itemPerPage",
+											"value": "number"
+										},
+										{
+											"key": "token",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "all house",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/hr/house?reports_order=descending&comments_order=ascending&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpdmlhbi5SZWlmZW5yYXRoQGhvdG1haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4OTM4NzY3LCJleHAiOjE2ODkwMjUxNjd9.psTFI_3KBWPlmAE46EkjoPEAtTXWYpIwU7iiHOnwLgk",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"house"
+											],
+											"query": [
+												{
+													"key": "reports_order",
+													"value": "descending"
+												},
+												{
+													"key": "comments_order",
+													"value": "ascending"
+												},
+												{
+													"key": "curPage",
+													"value": "number",
+													"disabled": true
+												},
+												{
+													"key": "itemPerPage",
+													"value": "number",
+													"disabled": true
+												},
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpdmlhbi5SZWlmZW5yYXRoQGhvdG1haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4OTM4NzY3LCJleHAiOjE2ODkwMjUxNjd9.psTFI_3KBWPlmAE46EkjoPEAtTXWYpIwU7iiHOnwLgk"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "house",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/hr/house?house_id=onjectId&token=string",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"house"
+									],
+									"query": [
+										{
+											"key": "house_id",
+											"value": "onjectId"
+										},
+										{
+											"key": "token",
+											"value": "string"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "house",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/hr/house?house_id=&token=",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"house"
+											],
+											"query": [
+												{
+													"key": "house_id",
+													"value": ""
+												},
+												{
+													"key": "token",
+													"value": ""
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "house report status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <Token>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"housing_id\": \"\",\n    \"report_id\": \"\",\n    \"status\": \"Open/In Progress/Closed\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/hr/house",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"house"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "house report status",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFsZXNzaW8zMkB5YWhvby5jb20iLCJyb2xlIjoiaHIiLCJpYXQiOjE2ODg5MzQwMzAsImV4cCI6MTY4OTAyMDQzMH0.GVr_RaLwFj64cupyCgKcdQCITMnUQiuh84vYE7R0LmI",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"housing_id\": \"64aaeb0c7bff55a539996bd1\",\n    \"report_id\": \"64aaeb0c7bff55a539996bd3\",\n    \"status\": \"Closed\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/hr/house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"house"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "new house",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <Token>",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": {\n        \"apt\": \"1305\",\n        \"street\": \"299 Frank St\",\n        \"city\": \"Manchester\",\n        \"state\": \"GB\",\n        \"zip\": \"47244\"\n    },\n    \"landlord\": {\n        \"fname\": \"zhenhao\",\n        \"lname\": \"zhang\",\n        \"phone\": \"(472)503-1299\",\n        \"email\": \"team@zhenhao.com\"\n    },\n    \"furniture\": {\n        \"beds\": 1,\n        \"mattresses\": 1,\n        \"tables\": 1,\n        \"chairs\": 1\n    }\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/hr/house",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hr",
+										"house"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "new house",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODAyMTExLCJleHAiOjE2ODg4ODg1MTF9.m2rIup4Xk1zXokF98tj42hxpynYWwDWRsfeq74NdbGE",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"address\": {\n        \"apt\": \"1305\",\n        \"street\": \"299 Frank St\",\n        \"city\": \"Manchester\",\n        \"state\": \"GB\",\n        \"zip\": \"432432\"\n    },\n    \"landlord\": {\n        \"fname\": \"zhenhao\",\n        \"lname\": \"zhang\",\n        \"phone\": \"(472)503-1299\",\n        \"email\": \"team@zhenhao.com\"\n    },\n    \"furniture\": {\n        \"beds\": 1,\n        \"mattresses\": 1,\n        \"tables\": 1,\n        \"chairs\": 1\n    }\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/hr/house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"hr",
+												"house"
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "housing",
+					"item": [
+						{
+							"name": "employee_house",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRpbGw4OUBob3RtYWlsLmNvbSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2ODg5NjUzMTQsImV4cCI6MTY4OTA1MTcxNH0.zmQDVqizALgu6n7Wufuw4O3exp7dxvyTABe-cc4n1e8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/housing/employee_house",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"housing",
+										"employee_house"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/housing/employee_house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"housing",
+												"employee_house"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3336"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d08-kwu2sMN4ZG1cX8WVg+581xMHeMI\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Jul 2023 21:10:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"64a71e41a7d61ea8c5b48c91\",\n    \"address\": {\n        \"apt\": \"194\",\n        \"street\": \"Unterölbach\",\n        \"city\": \"Stratmannscheid\",\n        \"state\": \"Bremen\",\n        \"zip\": 54258,\n        \"_id\": \"64a71e41a7d61ea8c5b48c92\"\n    },\n    \"tenant\": [\n        {\n            \"_id\": \"64a71e41a7d61ea8c5b48c5a\",\n            \"fname\": \"Abigail\",\n            \"lname\": \"Roth\",\n            \"cell_phone\": 474085325\n        }\n    ],\n    \"reports\": [\n        {\n            \"title\": \"exercitationem incidunt ratione adipisci eos\",\n            \"desc\": \"Facilis amet tenetur laborum itaque eveniet. Perferendis tempore ipsam nihil. Magni tenetur id libero atque magnam ipsam fugit omnis.\",\n            \"created_by\": \"Ada_Leiteritz95\",\n            \"status\": \"Closed\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c95\",\n                    \"ts\": \"2023-07-06T20:05:17.827Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c96\",\n                    \"ts\": \"2023-07-06T20:03:17.827Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c94\",\n                    \"ts\": \"2023-07-06T20:01:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c93\",\n            \"ts\": \"2023-07-06T20:03:00.827Z\"\n        },\n        {\n            \"title\": \"necessitatibus modi esse pariatur veritatis\",\n            \"desc\": \"Animi delectus labore architecto fuga nulla nam aliquam asperiores nesciunt. Voluptatem exercitationem necessitatibus dolores. Excepturi magnam aliquam reiciendis iusto minus nam.\",\n            \"created_by\": \"Jannek.Zaczkiewicz99\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9c\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9d\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9e\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c9b\",\n            \"ts\": \"2023-07-06T20:02:00.828Z\"\n        },\n        {\n            \"title\": \"atque asperiores quis voluptate cupiditate\",\n            \"desc\": \"Officia omnis non iste quas nulla illo. Ducimus velit odit laboriosam placeat. Magnam a eius culpa.\",\n            \"created_by\": \"Leonora92\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c99\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9a\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c98\",\n                    \"ts\": \"2023-07-06T20:04:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c97\",\n            \"ts\": \"2023-07-06T20:01:00.828Z\"\n        }\n    ],\n    \"landlord\": {\n        \"fname\": \"Anton\",\n        \"lname\": \"Eisenlauer\",\n        \"phone\": \"480224972\",\n        \"email\": \"Soraya46@yahoo.com\",\n        \"_id\": \"64a71e41a7d61ea8c5b48c9f\"\n    },\n    \"furniture\": {\n        \"beds\": 0,\n        \"mattresses\": 2,\n        \"tables\": 2,\n        \"chairs\": 0,\n        \"_id\": \"64a71e41a7d61ea8c5b48ca0\"\n    },\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "create_fac_report",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"postman.setGlobalVariable('changeableTime', (new Date()).toISOString());"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRpbGw4OUBob3RtYWlsLmNvbSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2ODg5NjUzMTQsImV4cCI6MTY4OTA1MTcxNH0.zmQDVqizALgu6n7Wufuw4O3exp7dxvyTABe-cc4n1e8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"test_title\",\n    \"desc\": \"desc\",\n    // check out the Pre-req tab for changing the time\n    \"ts\": \"{{changeableTime}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/housing/create_fac_report",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"housing",
+										"create_fac_report"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/housing/employee_house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"housing",
+												"employee_house"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3336"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d08-kwu2sMN4ZG1cX8WVg+581xMHeMI\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Jul 2023 21:10:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"64a71e41a7d61ea8c5b48c91\",\n    \"address\": {\n        \"apt\": \"194\",\n        \"street\": \"Unterölbach\",\n        \"city\": \"Stratmannscheid\",\n        \"state\": \"Bremen\",\n        \"zip\": 54258,\n        \"_id\": \"64a71e41a7d61ea8c5b48c92\"\n    },\n    \"tenant\": [\n        {\n            \"_id\": \"64a71e41a7d61ea8c5b48c5a\",\n            \"fname\": \"Abigail\",\n            \"lname\": \"Roth\",\n            \"cell_phone\": 474085325\n        }\n    ],\n    \"reports\": [\n        {\n            \"title\": \"exercitationem incidunt ratione adipisci eos\",\n            \"desc\": \"Facilis amet tenetur laborum itaque eveniet. Perferendis tempore ipsam nihil. Magni tenetur id libero atque magnam ipsam fugit omnis.\",\n            \"created_by\": \"Ada_Leiteritz95\",\n            \"status\": \"Closed\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c95\",\n                    \"ts\": \"2023-07-06T20:05:17.827Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c96\",\n                    \"ts\": \"2023-07-06T20:03:17.827Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c94\",\n                    \"ts\": \"2023-07-06T20:01:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c93\",\n            \"ts\": \"2023-07-06T20:03:00.827Z\"\n        },\n        {\n            \"title\": \"necessitatibus modi esse pariatur veritatis\",\n            \"desc\": \"Animi delectus labore architecto fuga nulla nam aliquam asperiores nesciunt. Voluptatem exercitationem necessitatibus dolores. Excepturi magnam aliquam reiciendis iusto minus nam.\",\n            \"created_by\": \"Jannek.Zaczkiewicz99\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9c\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9d\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9e\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c9b\",\n            \"ts\": \"2023-07-06T20:02:00.828Z\"\n        },\n        {\n            \"title\": \"atque asperiores quis voluptate cupiditate\",\n            \"desc\": \"Officia omnis non iste quas nulla illo. Ducimus velit odit laboriosam placeat. Magnam a eius culpa.\",\n            \"created_by\": \"Leonora92\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c99\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9a\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c98\",\n                    \"ts\": \"2023-07-06T20:04:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c97\",\n            \"ts\": \"2023-07-06T20:01:00.828Z\"\n        }\n    ],\n    \"landlord\": {\n        \"fname\": \"Anton\",\n        \"lname\": \"Eisenlauer\",\n        \"phone\": \"480224972\",\n        \"email\": \"Soraya46@yahoo.com\",\n        \"_id\": \"64a71e41a7d61ea8c5b48c9f\"\n    },\n    \"furniture\": {\n        \"beds\": 0,\n        \"mattresses\": 2,\n        \"tables\": 2,\n        \"chairs\": 0,\n        \"_id\": \"64a71e41a7d61ea8c5b48ca0\"\n    },\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "add_comment_to_report (employee)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"postman.setGlobalVariable('changeableTime', (new Date()).toISOString());"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRpbGw4OUBob3RtYWlsLmNvbSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2ODg5NDE1NzMsImV4cCI6MTY4OTAyNzk3M30.gEMKDpPJipc1EKdpXohH7sG7zs-1KQQo46Cu3dXURJM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"title\": \"test_title\",\n    \"desc\": \"desc\",\n    \"reportId\": \"64aaeb0c7bff55a539996bc2\",\n    // \"houseId\": \"64aaeb0c7bff55a539996bc0\",\n    // check out the Pre-req tab for changing the time\n    \"ts\": \"{{changeableTime}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/housing/add_comment_to_report",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"housing",
+										"add_comment_to_report"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/housing/employee_house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"housing",
+												"employee_house"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3336"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d08-kwu2sMN4ZG1cX8WVg+581xMHeMI\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Jul 2023 21:10:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"64a71e41a7d61ea8c5b48c91\",\n    \"address\": {\n        \"apt\": \"194\",\n        \"street\": \"Unterölbach\",\n        \"city\": \"Stratmannscheid\",\n        \"state\": \"Bremen\",\n        \"zip\": 54258,\n        \"_id\": \"64a71e41a7d61ea8c5b48c92\"\n    },\n    \"tenant\": [\n        {\n            \"_id\": \"64a71e41a7d61ea8c5b48c5a\",\n            \"fname\": \"Abigail\",\n            \"lname\": \"Roth\",\n            \"cell_phone\": 474085325\n        }\n    ],\n    \"reports\": [\n        {\n            \"title\": \"exercitationem incidunt ratione adipisci eos\",\n            \"desc\": \"Facilis amet tenetur laborum itaque eveniet. Perferendis tempore ipsam nihil. Magni tenetur id libero atque magnam ipsam fugit omnis.\",\n            \"created_by\": \"Ada_Leiteritz95\",\n            \"status\": \"Closed\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c95\",\n                    \"ts\": \"2023-07-06T20:05:17.827Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c96\",\n                    \"ts\": \"2023-07-06T20:03:17.827Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c94\",\n                    \"ts\": \"2023-07-06T20:01:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c93\",\n            \"ts\": \"2023-07-06T20:03:00.827Z\"\n        },\n        {\n            \"title\": \"necessitatibus modi esse pariatur veritatis\",\n            \"desc\": \"Animi delectus labore architecto fuga nulla nam aliquam asperiores nesciunt. Voluptatem exercitationem necessitatibus dolores. Excepturi magnam aliquam reiciendis iusto minus nam.\",\n            \"created_by\": \"Jannek.Zaczkiewicz99\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9c\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9d\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9e\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c9b\",\n            \"ts\": \"2023-07-06T20:02:00.828Z\"\n        },\n        {\n            \"title\": \"atque asperiores quis voluptate cupiditate\",\n            \"desc\": \"Officia omnis non iste quas nulla illo. Ducimus velit odit laboriosam placeat. Magnam a eius culpa.\",\n            \"created_by\": \"Leonora92\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c99\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9a\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c98\",\n                    \"ts\": \"2023-07-06T20:04:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c97\",\n            \"ts\": \"2023-07-06T20:01:00.828Z\"\n        }\n    ],\n    \"landlord\": {\n        \"fname\": \"Anton\",\n        \"lname\": \"Eisenlauer\",\n        \"phone\": \"480224972\",\n        \"email\": \"Soraya46@yahoo.com\",\n        \"_id\": \"64a71e41a7d61ea8c5b48c9f\"\n    },\n    \"furniture\": {\n        \"beds\": 0,\n        \"mattresses\": 2,\n        \"tables\": 2,\n        \"chairs\": 0,\n        \"_id\": \"64a71e41a7d61ea8c5b48ca0\"\n    },\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "add_comment_to_report (hr)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"postman.setGlobalVariable('changeableTime', (new Date()).toISOString());"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpdmlhbi5SZWlmZW5yYXRoQGhvdG1haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4OTQxNjIzLCJleHAiOjE2ODkwMjgwMjN9.lP5Tn7Y4M_ByTp7PWFl46ikOtIQqDoOFxWIclhIZW8I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"title\": \"test_title\",\n    \"desc\": \"desc\",\n    \"reportId\": \"64aaeb0c7bff55a539996bc2\",\n    \"houseId\": \"64aaeb0c7bff55a539996bc0\",\n    // check out the Pre-req tab for changing the time\n    \"ts\": \"{{changeableTime}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/housing/add_comment_to_report",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"housing",
+										"add_comment_to_report"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/housing/employee_house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"housing",
+												"employee_house"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3336"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d08-kwu2sMN4ZG1cX8WVg+581xMHeMI\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Jul 2023 21:10:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"64a71e41a7d61ea8c5b48c91\",\n    \"address\": {\n        \"apt\": \"194\",\n        \"street\": \"Unterölbach\",\n        \"city\": \"Stratmannscheid\",\n        \"state\": \"Bremen\",\n        \"zip\": 54258,\n        \"_id\": \"64a71e41a7d61ea8c5b48c92\"\n    },\n    \"tenant\": [\n        {\n            \"_id\": \"64a71e41a7d61ea8c5b48c5a\",\n            \"fname\": \"Abigail\",\n            \"lname\": \"Roth\",\n            \"cell_phone\": 474085325\n        }\n    ],\n    \"reports\": [\n        {\n            \"title\": \"exercitationem incidunt ratione adipisci eos\",\n            \"desc\": \"Facilis amet tenetur laborum itaque eveniet. Perferendis tempore ipsam nihil. Magni tenetur id libero atque magnam ipsam fugit omnis.\",\n            \"created_by\": \"Ada_Leiteritz95\",\n            \"status\": \"Closed\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c95\",\n                    \"ts\": \"2023-07-06T20:05:17.827Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c96\",\n                    \"ts\": \"2023-07-06T20:03:17.827Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c94\",\n                    \"ts\": \"2023-07-06T20:01:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c93\",\n            \"ts\": \"2023-07-06T20:03:00.827Z\"\n        },\n        {\n            \"title\": \"necessitatibus modi esse pariatur veritatis\",\n            \"desc\": \"Animi delectus labore architecto fuga nulla nam aliquam asperiores nesciunt. Voluptatem exercitationem necessitatibus dolores. Excepturi magnam aliquam reiciendis iusto minus nam.\",\n            \"created_by\": \"Jannek.Zaczkiewicz99\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9c\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9d\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9e\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c9b\",\n            \"ts\": \"2023-07-06T20:02:00.828Z\"\n        },\n        {\n            \"title\": \"atque asperiores quis voluptate cupiditate\",\n            \"desc\": \"Officia omnis non iste quas nulla illo. Ducimus velit odit laboriosam placeat. Magnam a eius culpa.\",\n            \"created_by\": \"Leonora92\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c99\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9a\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c98\",\n                    \"ts\": \"2023-07-06T20:04:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c97\",\n            \"ts\": \"2023-07-06T20:01:00.828Z\"\n        }\n    ],\n    \"landlord\": {\n        \"fname\": \"Anton\",\n        \"lname\": \"Eisenlauer\",\n        \"phone\": \"480224972\",\n        \"email\": \"Soraya46@yahoo.com\",\n        \"_id\": \"64a71e41a7d61ea8c5b48c9f\"\n    },\n    \"furniture\": {\n        \"beds\": 0,\n        \"mattresses\": 2,\n        \"tables\": 2,\n        \"chairs\": 0,\n        \"_id\": \"64a71e41a7d61ea8c5b48ca0\"\n    },\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "update_comment_on_report (employee)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"postman.setGlobalVariable('changeableTime', (new Date()).toISOString());"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlRpbGw4OUBob3RtYWlsLmNvbSIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2ODg5NDE1NzMsImV4cCI6MTY4OTAyNzk3M30.gEMKDpPJipc1EKdpXohH7sG7zs-1KQQo46Cu3dXURJM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"title\": \"test_title\",\n    \"desc\": \"employee_updated_desc\",\n    \"reportId\": \"64aaeb0c7bff55a539996bc2\",\n    \"commentId\": \"64ab37628bdb7e4a632f1250\",\n    // check out the Pre-req tab for changing the time\n    \"ts\": \"{{changeableTime}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/housing/update_comment_on_report",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"housing",
+										"update_comment_on_report"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/housing/employee_house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"housing",
+												"employee_house"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3336"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d08-kwu2sMN4ZG1cX8WVg+581xMHeMI\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Jul 2023 21:10:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"64a71e41a7d61ea8c5b48c91\",\n    \"address\": {\n        \"apt\": \"194\",\n        \"street\": \"Unterölbach\",\n        \"city\": \"Stratmannscheid\",\n        \"state\": \"Bremen\",\n        \"zip\": 54258,\n        \"_id\": \"64a71e41a7d61ea8c5b48c92\"\n    },\n    \"tenant\": [\n        {\n            \"_id\": \"64a71e41a7d61ea8c5b48c5a\",\n            \"fname\": \"Abigail\",\n            \"lname\": \"Roth\",\n            \"cell_phone\": 474085325\n        }\n    ],\n    \"reports\": [\n        {\n            \"title\": \"exercitationem incidunt ratione adipisci eos\",\n            \"desc\": \"Facilis amet tenetur laborum itaque eveniet. Perferendis tempore ipsam nihil. Magni tenetur id libero atque magnam ipsam fugit omnis.\",\n            \"created_by\": \"Ada_Leiteritz95\",\n            \"status\": \"Closed\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c95\",\n                    \"ts\": \"2023-07-06T20:05:17.827Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c96\",\n                    \"ts\": \"2023-07-06T20:03:17.827Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c94\",\n                    \"ts\": \"2023-07-06T20:01:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c93\",\n            \"ts\": \"2023-07-06T20:03:00.827Z\"\n        },\n        {\n            \"title\": \"necessitatibus modi esse pariatur veritatis\",\n            \"desc\": \"Animi delectus labore architecto fuga nulla nam aliquam asperiores nesciunt. Voluptatem exercitationem necessitatibus dolores. Excepturi magnam aliquam reiciendis iusto minus nam.\",\n            \"created_by\": \"Jannek.Zaczkiewicz99\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9c\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9d\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9e\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c9b\",\n            \"ts\": \"2023-07-06T20:02:00.828Z\"\n        },\n        {\n            \"title\": \"atque asperiores quis voluptate cupiditate\",\n            \"desc\": \"Officia omnis non iste quas nulla illo. Ducimus velit odit laboriosam placeat. Magnam a eius culpa.\",\n            \"created_by\": \"Leonora92\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c99\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9a\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c98\",\n                    \"ts\": \"2023-07-06T20:04:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c97\",\n            \"ts\": \"2023-07-06T20:01:00.828Z\"\n        }\n    ],\n    \"landlord\": {\n        \"fname\": \"Anton\",\n        \"lname\": \"Eisenlauer\",\n        \"phone\": \"480224972\",\n        \"email\": \"Soraya46@yahoo.com\",\n        \"_id\": \"64a71e41a7d61ea8c5b48c9f\"\n    },\n    \"furniture\": {\n        \"beds\": 0,\n        \"mattresses\": 2,\n        \"tables\": 2,\n        \"chairs\": 0,\n        \"_id\": \"64a71e41a7d61ea8c5b48ca0\"\n    },\n    \"__v\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "update_comment_on_report (hr)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const moment = require('moment');",
+											"postman.setGlobalVariable('changeableTime', (new Date()).toISOString());"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpdmlhbi5SZWlmZW5yYXRoQGhvdG1haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4OTQxNjIzLCJleHAiOjE2ODkwMjgwMjN9.lP5Tn7Y4M_ByTp7PWFl46ikOtIQqDoOFxWIclhIZW8I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"title\": \"test_title\",\n    \"desc\": \"hr_updated_desc\",\n    \"reportId\": \"64aaeb0c7bff55a539996bc2\",\n    \"commentId\": \"64ab34627f283b443ece789f\",\n    \"houseId\": \"64aaeb0c7bff55a539996bc0\",\n    // check out the Pre-req tab for changing the time\n    \"ts\": \"{{changeableTime}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/housing/update_comment_on_report",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"housing",
+										"update_comment_on_report"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/api/housing/employee_house",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"housing",
+												"employee_house"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "3336"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"d08-kwu2sMN4ZG1cX8WVg+581xMHeMI\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 06 Jul 2023 21:10:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_id\": \"64a71e41a7d61ea8c5b48c91\",\n    \"address\": {\n        \"apt\": \"194\",\n        \"street\": \"Unterölbach\",\n        \"city\": \"Stratmannscheid\",\n        \"state\": \"Bremen\",\n        \"zip\": 54258,\n        \"_id\": \"64a71e41a7d61ea8c5b48c92\"\n    },\n    \"tenant\": [\n        {\n            \"_id\": \"64a71e41a7d61ea8c5b48c5a\",\n            \"fname\": \"Abigail\",\n            \"lname\": \"Roth\",\n            \"cell_phone\": 474085325\n        }\n    ],\n    \"reports\": [\n        {\n            \"title\": \"exercitationem incidunt ratione adipisci eos\",\n            \"desc\": \"Facilis amet tenetur laborum itaque eveniet. Perferendis tempore ipsam nihil. Magni tenetur id libero atque magnam ipsam fugit omnis.\",\n            \"created_by\": \"Ada_Leiteritz95\",\n            \"status\": \"Closed\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c95\",\n                    \"ts\": \"2023-07-06T20:05:17.827Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c96\",\n                    \"ts\": \"2023-07-06T20:03:17.827Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c94\",\n                    \"ts\": \"2023-07-06T20:01:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c93\",\n            \"ts\": \"2023-07-06T20:03:00.827Z\"\n        },\n        {\n            \"title\": \"necessitatibus modi esse pariatur veritatis\",\n            \"desc\": \"Animi delectus labore architecto fuga nulla nam aliquam asperiores nesciunt. Voluptatem exercitationem necessitatibus dolores. Excepturi magnam aliquam reiciendis iusto minus nam.\",\n            \"created_by\": \"Jannek.Zaczkiewicz99\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9c\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9d\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9e\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c9b\",\n            \"ts\": \"2023-07-06T20:02:00.828Z\"\n        },\n        {\n            \"title\": \"atque asperiores quis voluptate cupiditate\",\n            \"desc\": \"Officia omnis non iste quas nulla illo. Ducimus velit odit laboriosam placeat. Magnam a eius culpa.\",\n            \"created_by\": \"Leonora92\",\n            \"status\": \"In Progress\",\n            \"comments\": [\n                {\n                    \"desc\": \"Praesentium iure iste voluptates quia aliquam debitis. Aliquam quos facilis dicta nobis labore delectus.\",\n                    \"created_by\": \"Levin_Borgeling29\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c99\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Distinctio aperiam libero enim ex. Quasi ducimus labore provident dolorum cumque dolorum sit neque.\",\n                    \"created_by\": \"Leopold.Jahnke71\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c9a\",\n                    \"ts\": \"2023-07-06T20:04:17.828Z\"\n                },\n                {\n                    \"desc\": \"Minima reprehenderit eveniet. Aut eum iure reiciendis temporibus dolorem doloribus.\",\n                    \"created_by\": \"Arda_Kerl\",\n                    \"_id\": \"64a71e41a7d61ea8c5b48c98\",\n                    \"ts\": \"2023-07-06T20:04:17.827Z\"\n                }\n            ],\n            \"_id\": \"64a71e41a7d61ea8c5b48c97\",\n            \"ts\": \"2023-07-06T20:01:00.828Z\"\n        }\n    ],\n    \"landlord\": {\n        \"fname\": \"Anton\",\n        \"lname\": \"Eisenlauer\",\n        \"phone\": \"480224972\",\n        \"email\": \"Soraya46@yahoo.com\",\n        \"_id\": \"64a71e41a7d61ea8c5b48c9f\"\n    },\n    \"furniture\": {\n        \"beds\": 0,\n        \"mattresses\": 2,\n        \"tables\": 2,\n        \"chairs\": 0,\n        \"_id\": \"64a71e41a7d61ea8c5b48ca0\"\n    },\n    \"__v\": 0\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "info",
+					"item": [
+						{
+							"name": "create_userInfo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1lbGlrZV9Hcm90a2VAZ21haWwuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY4ODg3NDUxOCwiZXhwIjoxNjg4OTYwOTE4fQ.-HRXNqKZTqXtY7tBixEma2PZaeWhnoILMv4cI2LQJas",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "json",
+											"type": "file",
+											"src": "/Users/yifu/Desktop/test1.json"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": [
+												"/Users/yifu/Desktop/dl.png",
+												"/Users/yifu/Desktop/receipt.png"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/info/create_userInfo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"info",
+										"create_userInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateInfo",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1lbGlrZV9Hcm90a2VAZ21haWwuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY4ODg3NDUxOCwiZXhwIjoxNjg4OTYwOTE4fQ.-HRXNqKZTqXtY7tBixEma2PZaeWhnoILMv4cI2LQJas",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "updatedData",
+											"type": "file",
+											"src": "/Users/yifu/Desktop/test1.json"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": [
+												"/Users/yifu/Desktop/dl.png",
+												"/Users/yifu/Desktop/EAD.png",
+												"/Users/yifu/Desktop/I-20.png",
+												"/Users/yifu/Desktop/profile.png"
+											],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/info/updateInfo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"info",
+										"updateInfo"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "shared",
+			"item": [
+				{
+					"name": "getInfo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkhlbnJpa2U2OUBnbWFpbC5jb20iLCJyb2xlIjoiaHIiLCJpYXQiOjE2ODg4NDc4ODksImV4cCI6MTY4ODkzNDI4OX0.JC6Ez-zz838Kk-NXPoQSe4aELm6zG4urJ9K2QRvIYws",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/info/getInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"info",
+								"getInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1lbGlrZV9Hcm90a2VAZ21haWwuY29tIiwicm9sZSI6Im5vcm1hbCIsImlhdCI6MTY4ODg3NDUxOCwiZXhwIjoxNjg4OTYwOTE4fQ.-HRXNqKZTqXtY7tBixEma2PZaeWhnoILMv4cI2LQJas",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "json",
+									"type": "file",
+									"src": "/Users/yifu/Desktop/test.json",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/yifu/Desktop/I-20.png"
+								},
+								{
+									"key": "targetUserEmail",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/info/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"info",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "download",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkthcmxhX1RpbGduZXJAZ21haWwuY29tIiwicm9sZSI6ImhyIiwiaWF0IjoxNjg4ODY1NTM5LCJleHAiOjE2ODg5NTE5Mzl9.BgCXrxm4yVU7jitEmUg4658nu3HIrit157IP3sLsg0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/info/download?fileName=receipt&targetUserEmail=Karla_Tilgner@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"info",
+								"download"
+							],
+							"query": [
+								{
+									"key": "fileName",
+									"value": "receipt"
+								},
+								{
+									"key": "targetUserEmail",
+									"value": "Karla_Tilgner@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

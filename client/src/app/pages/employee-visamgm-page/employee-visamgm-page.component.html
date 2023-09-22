@@ -1,0 +1,103 @@
+<app-employeepageheader></app-employeepageheader>
+<mat-card
+  *ngIf="status === 'pending' && filePhase === 'receipt'"
+  class="msg-card"
+>
+  <mat-card-header>
+    <mat-card-title>Waiting for HR to approve your OPT Receipt</mat-card-title>
+  </mat-card-header>
+</mat-card>
+<mat-card *ngIf="status === 'waiting' && filePhase === 'EAD'" class="msg-card">
+  <mat-card-header>
+    <mat-card-title>Please upload a copy of your OPT EAD</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions class="align-center">
+    <input type="file" hidden (change)="onEADSelected($event)" #fileInputEAD />
+    <button mat-stroked-button (click)="fileInputEAD.click()" color="primary">
+      Upload
+    </button>
+    <h2>{{ EADFileName || "placeholder" }}</h2>
+  </mat-card-actions>
+</mat-card>
+<mat-card *ngIf="status === 'pending' && filePhase === 'EAD'" class="msg-card">
+  <mat-card-header>
+    <mat-card-title>Waiting for HR to approve your OPT EAD</mat-card-title>
+  </mat-card-header>
+</mat-card>
+<mat-card
+  *ngIf="status === 'waiting' && filePhase === 'I-983'"
+  class="msg-card"
+>
+  <mat-card-header>
+    <mat-card-title>Please download and fill out the I-983 form</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <input type="file" hidden (change)="onI983Selected($event)" #fileInput983 />
+
+    <button mat-stroked-button (click)="fileInput983.click()" color="primary">
+      Upload
+    </button>
+    <h2>{{ I983FileName || "placeholder" }}</h2>
+
+    <h3>
+      <a href="assets/file1.pdf" download="file1.pdf"
+        >Download Empty Template</a
+      >
+      <a href="assets/file2.pdf" download="file2.pdf"
+        >Download Sample Template</a
+      >
+    </h3>
+  </mat-card-actions>
+</mat-card>
+<mat-card
+  *ngIf="status === 'pending' && filePhase === 'I-983'"
+  class="msg-card"
+>
+  <mat-card-header>
+    <mat-card-title
+      >Waiting for HR to approve and sign your I-983</mat-card-title
+    >
+  </mat-card-header>
+</mat-card>
+<mat-card *ngIf="status === 'waiting' && filePhase === 'I-20'" class="msg-card">
+  <mat-card-header>
+    <mat-card-title
+      >Please send the I-983 along with all necessary documents to your school
+      and upload the new I-20</mat-card-title
+    >
+  </mat-card-header>
+  <mat-card-actions>
+    <input type="file" hidden (change)="onI20Selected($event)" #fileInputI20 />
+
+    <button mat-stroked-button (click)="fileInputI20.click()" color="primary">
+      Upload
+    </button>
+    <h2>{{ I20FileName || "placeholder" }}</h2>
+  </mat-card-actions>
+</mat-card>
+<mat-card *ngIf="status === 'pending' && filePhase === 'I-20'" class="msg-card">
+  <mat-card-header>
+    <mat-card-title>Waiting for HR to approve your I-20</mat-card-title>
+  </mat-card-header>
+</mat-card>
+<mat-card *ngIf="Approved" class="msg-card">
+  <mat-card-header>
+    <mat-card-title>All documents have been approved</mat-card-title>
+  </mat-card-header>
+</mat-card>
+<mat-card *ngIf="Rejected" class="msg-card">
+  <mat-card-header>
+    <mat-card-title>Rejected: feedback from HR</mat-card-title>
+    <mat-card-subtitle>{{ employee_data?.visa_status_msg }}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+<button
+  class="submit-btn"
+  mat-raised-button
+  color="primary"
+  (click)="onSubmit()"
+  [disabled]="status === 'pending' || Approved"
+>
+  Submit
+</button>
+<span *ngIf="invalid" style="color: red"> Please include a file!</span>

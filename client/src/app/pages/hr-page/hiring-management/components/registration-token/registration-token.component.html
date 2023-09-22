@@ -1,0 +1,38 @@
+<h2 class="mt-5">Registration Token</h2>
+
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm" novalidate>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" required pattern="[a-zA-Z]*" [(ngModel)]="user.fname" name="fname" #fname="ngModel">
+            <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger mt-2">
+                <div *ngIf="fname.hasError('required')">First name is required.</div>
+                <div *ngIf="fname.hasError('pattern')">Only English alphabets are allowed.</div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" required pattern="[a-zA-Z]*" [(ngModel)]="user.lname" name="lname" #lname="ngModel">
+            <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger mt-2">
+                <div *ngIf="lname.hasError('required')">Last name is required.</div>
+                <div *ngIf="lname.hasError('pattern')">Only English alphabets are allowed.</div>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email" #email="ngModel">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-2">
+                <div *ngIf="email.hasError('required')">Email is required.</div>
+                <div *ngIf="email.hasError('email')">Invalid email.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Send</button>
+    </div>
+</form>
+
+<a href="hr/email-registration-history">Email Registration History</a>

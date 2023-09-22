@@ -1,0 +1,61 @@
+<app-employeepageheader></app-employeepageheader>
+<div class="container m-5" *ngIf="housing$ | async as house">
+  <div class="row gx-3">
+    <div class="card col-lg-6">
+      <img src="https://images.unsplash.com/photo-1638973140785-3b918e290682?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=389&q=80" alt="Image of the employee's house" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Welcome to Your New Home!</h5>
+        <p class="card-text">{{house.address.street}} {{house.address.city}}, {{house.address.state}} {{house.address.zip}}</p>
+        <p class="card-text">Landlord: {{house.landlord?.fname}} {{house.landlord?.lname}} - {{house.landlord?.email}} - {{house.landlord?.phone}}</p>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h2>Roommates</h2>
+      <div *ngFor="let tenant of house.tenant">
+        <div class="card">
+          <div class="card-header">
+            <h3>
+              {{tenant.fname}} {{tenant.lname}}
+            </h3>
+          </div>
+          <div class="card-body">
+            <h5>Phone Number: {{tenant.cell_phone}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <nav>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <button (click)="setDisplay('view')" [class.active]="isActive('view')" class="nav-link">View Reports</button>
+        </li>
+        <li class="nav-item">
+          <button (click)="setDisplay('create')" [class.active]="isActive('create')" class="nav-link">Create New Report</button>
+        </li>
+      </ul>
+    </nav>
+    <ng-container *ngIf="isActive('view'); else createReport">
+      <div class="col-12 text-center">
+        <h2>Your Facility Reports</h2>
+      </div>
+      <app-hr-facilty-report-card [house]="house" [reports]="house.reports" [user]="user"></app-hr-facilty-report-card>
+    </ng-container>
+    <ng-template #createReport>
+      <div class="col-12 text-center">
+        <h2>Create Facility Report</h2>
+      </div>
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+          <label for="title">Report Title</label>
+          <input type="text" class="form-control" name="title" id="title" placeholder="Broken Floor" id="title" [(ngModel)]="title">
+        </div>
+        <div class="form-group">
+          <label for="desc">Report Summary</label>
+          <textarea class="form-control" id="desc" name="desc" rows="4" placeholder="Please describe the issue" [(ngModel)]="desc"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Submit Report</button>
+      </form>
+    </ng-template>
+</div>

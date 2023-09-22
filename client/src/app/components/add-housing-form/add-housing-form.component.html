@@ -1,0 +1,125 @@
+<form [formGroup]="housingForm" class="g-3" (ngSubmit)="onSubmit()">
+  <fieldset class="row mt-3" formGroupName="address">
+    <legend class="col-form-label col-md-12 pt-0"><h3>House Address</h3></legend>
+    <div class="col-md-6">
+      <label for="street" class="form-label">Address</label>
+      <input type="text" class="form-control" id="street" placeholder="2024 Wall St" formControlName="street">
+      <ng-container *ngIf="housingForm.get('address.street')?.errors && housingForm.get('address.street')?.touched">
+        <p class="text-danger">Address is required.</p>
+      </ng-container>
+    </div>
+    <div class="col-md-4">
+      <label for="zip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="zip" formControlName="zip">
+      <ng-container *ngIf="housingForm.get('address.zip')?.errors && housingForm.get('address.zip')?.touched">
+        <p class="text-danger">
+          Zip is required and must be 5 numbers.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-6">
+      <label for="city" class="form-label">City</label>
+      <input type="text" class="form-control" id="city" formControlName="city">
+      <ng-container *ngIf="housingForm.get('address.city')?.errors && housingForm.get('address.city')?.touched">
+        <p class="text-danger">
+          City is required.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-4">
+      <label for="state" class="form-label">State</label>
+      <select id="state" class="form-select" formControlName="state">
+        <option selected>Choose...</option>
+        <ng-container *ngFor="let state of states">
+          <option>{{state}}</option>
+        </ng-container>
+      </select>
+      <ng-container *ngIf="housingForm.get('address.state')?.errors && housingForm.get('address.state')?.touched">
+        <p class="text-danger">
+          State is required.
+        </p>
+      </ng-container>
+    </div>
+  </fieldset>
+
+  <fieldset class="row mt-3" formGroupName="landlord">
+    <legend class="col-form-label col-md-12 pt-0"><h3>Land Lord Info</h3></legend>
+    <div class="col-md-6">
+      <label for="fname" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="fname" formControlName="fname">
+      <ng-container *ngIf="housingForm.get('landlord.fname')?.errors && housingForm.get('landlord.fname')?.touched">
+        <p class="text-danger">
+          First Name is required.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-6">
+      <label for="lname" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lname" formControlName="lname">
+      <ng-container *ngIf="housingForm.get('landlord.lname')?.errors && housingForm.get('landlord.lname')?.touched">
+        <p class="text-danger">
+          Last Name is required.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-6">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email" placeholder="example@gmail.com">
+      <ng-container *ngIf="housingForm.get('landlord.email')?.errors && housingForm.get('landlord.email')?.touched">
+        <p class="text-danger">
+          Email is required.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-6">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="9998887777">
+      <ng-container *ngIf="housingForm.get('landlord.phone')?.errors && housingForm.get('landlord.phone')?.touched">
+        <p class="text-danger">
+          Phone Number is required, should be 10 digits, and contain no special characters.
+        </p>
+      </ng-container>
+    </div>
+  </fieldset>
+
+  <fieldset class="row mt-3" formGroupName="furniture">
+    <legend class="col-form-label col-md-12 pt-0"><h3>Facility Info</h3></legend>
+    <div class="col-lg-3">
+      <label for="beds" class="form-label">Beds: </label>
+      <input type="text" class="form-control" id="beds" formControlName="beds" placeholder="# of beds">
+      <ng-container *ngIf="housingForm.get('furniture.beds')?.errors && housingForm.get('furniture.beds')?.touched">
+        <p class="text-danger">
+          Bed count is required and can not be negative.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-lg-3">
+      <label for="mattresses" class="form-label">Mattresses: </label>
+      <input type="text" class="form-control" id="mattresses" formControlName="mattresses" placeholder="# of mattresses">
+      <ng-container *ngIf="housingForm.get('furniture.mattresses')?.errors && housingForm.get('furniture.mattresses')?.touched">
+        <p class="text-danger">
+          Mattress count is required and can not be negative.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-lg-3">
+      <label for="chairs" class="form-label">Chairs: </label>
+      <input type="text" class="form-control" id="chairs" formControlName="chairs" placeholder="# of chairs">
+      <ng-container *ngIf="housingForm.get('furniture.chairs')?.errors && housingForm.get('furniture.chairs')?.touched">
+        <p class="text-danger">
+          Chair count is required and can not be negative.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-lg-3">
+      <label for="tables" class="form-label">Tables: </label>
+      <input type="text" class="form-control" id="tables" formControlName="tables" placeholder="# of tables">
+      <ng-container *ngIf="housingForm.get('furniture.tables')?.errors && housingForm.get('furniture.tables')?.touched">
+        <p class="text-danger">
+          Mattress count is required and can not be negative.
+        </p>
+      </ng-container>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary col-lg-3 mt-3">Add House</button>
+</form>

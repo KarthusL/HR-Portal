@@ -1,0 +1,4 @@
+<div *ngIf="employee" class="container mt-5">
+  <h1 class="text-center">{{employee.lname}} {{employee.mname}} {{employee.fname}}</h1>
+  <app-employee-detail-card [email]="employee.email"></app-employee-detail-card>
+</div>

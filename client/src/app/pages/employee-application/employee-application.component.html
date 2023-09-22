@@ -1,0 +1,545 @@
+<app-employeepageheader></app-employeepageheader>
+<form
+  class="application-form"
+  [formGroup]="applicationForm"
+  (ngSubmit)="onSubmit()"
+>
+  <h2 *ngIf="status === 'Not Started'">
+    Please fill out this onboarding application form.
+  </h2>
+  <h2 *ngIf="status === 'Pending'">
+    Please wait for HR to review your application.
+  </h2>
+  <h2 *ngIf="status === 'Rejected'">
+    Please revise your application and resubmit again.
+  </h2>
+  <h3 *ngIf="status === 'Rejected'">
+    Feedback: {{employee_data?.msg}}
+  </h3>
+
+  <table class="full-width" cellspacing="0">
+    <tr formGroupName="name">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="fname" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Middle name</mat-label>
+          <input matInput formControlName="mname" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName="lname" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Preferred name</mat-label>
+          <input matInput formControlName="pname" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            value= 'Your profile picture'
+            disabled
+          />
+          <input
+            type="file"
+            class="file-input"
+            (change)="onProfilePictureSelected($event)"
+            #profilepictureUpload
+          />
+          <button
+            [disabled]="status === 'Pending' || status==='Rejected'"
+            type="button"
+            mat-mini-fab
+            color="primary"
+            matSuffix
+            class="upload-btn"
+            (click)="profilepictureUpload.click()"
+          >
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </mat-form-field>
+      </td>
+      <td>
+        <img
+          [src]="employee_data?.pic||applicationForm.get('pic')?.value"
+          alt="avatar"
+          class="avatar"
+        />
+      </td>
+    </tr>
+    <tr formGroupName="address">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>building/apt#</mat-label>
+          <input matInput placeholder="Ex. 100 " formControlName="apt" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Street</mat-label>
+          <input matInput placeholder="Ex. Main St" formControlName="street" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="address">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>City</mat-label>
+          <input
+            matInput
+            placeholder="Ex. San Francisco"
+            formControlName="city"
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>State</mat-label>
+          <input
+            matInput
+            placeholder="Ex. California"
+            formControlName="state"
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Postal Code</mat-label>
+          <input
+            matInput
+            #postalCode
+            maxlength="5"
+            placeholder="Ex. 94105"
+            formControlName="zip"
+          />
+          <mat-hint align="end">{{ postalCode.value.length }} / 5</mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="phones">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Cellphone</mat-label>
+          <span matPrefix>+1 &nbsp;</span>
+          <input
+            type="tel"
+            matInput
+            placeholder="555-555-1234"
+            formControlName="cell_phone"
+          />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Workphone</mat-label>
+          <span matPrefix>+1 &nbsp;</span>
+          <input
+            type="tel"
+            matInput
+            placeholder="555-555-1234"
+            formControlName="work_phone"
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="carInfo">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Car infomation</mat-label>
+          <mat-select formControlName="hasCar">
+            <mat-option value="true">I have a car</mat-option>
+            <mat-option value="false">I don't have a car</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('carInfo.hasCar')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>make</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Toyota"
+            formControlName="make"
+          />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('carInfo.hasCar')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>model</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Highlander"
+            formControlName="model"
+          />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('carInfo.hasCar')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>color</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="black"
+            formControlName="color"
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr id="emailInput">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>email</mat-label>
+          <input type="text" [readonly]="isReadonly" [disabled]="isDisabled" matInput value="{{user?.email}}" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="social">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>SSN</mat-label>
+          <input type="text" matInput formControlName="ssn" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Date of birth</mat-label>
+          <input matInput formControlName="dob" [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Gender</mat-label>
+          <mat-select formControlName="gen">
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="I don't wish to answer"
+              >I don't want to answer</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="immigration">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Are you citizen/PR</mat-label>
+          <mat-select formControlName="isCitizenOrPr">
+            <mat-option value="true">Yes</mat-option>
+            <mat-option value="false">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td
+        *ngIf="
+          applicationForm.get('immigration.isCitizenOrPr')?.value === 'true'
+        "
+      >
+        <mat-form-field class="full-width">
+          <mat-label>I am a</mat-label>
+          <mat-select formControlName="citizen_status">
+            <mat-option value="Citizen">Citizen</mat-option>
+            <mat-option value="Green Card">Green card holder</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td
+        *ngIf="
+          applicationForm.get('immigration.isCitizenOrPr')?.value === 'false'
+        "
+      >
+        <mat-form-field class="full-width">
+          <mat-label>Your work authorization</mat-label>
+          <mat-select formControlName="type">
+            <mat-option value="H1-B">H1-B</mat-option>
+            <mat-option value="L2">L2</mat-option>
+            <mat-option value="F1(CPT/OPT)">F1(CPT/OPT)</mat-option>
+            <mat-option value="H4">H4</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('immigration.type')?.value === 'Other'">
+        <mat-form-field class="full-width">
+          <mat-label>Your visa type</mat-label>
+          <input type="text" matInput formControlName="visa_title" />
+        </mat-form-field>
+      </td>
+      <td
+        *ngIf="
+          applicationForm.get('immigration.type')?.value === 'F1(CPT/OPT)' &&
+          applicationForm.get('immigration.isCitizenOrPr')?.value === 'false'
+        "
+      >
+        <mat-form-field class="full-width">
+          <input
+            type="text"
+            matInput
+            [readonly]="isReadonly"
+
+            value="{{ OPTReceiptFileName || 'Upload OPT receipt' }}"
+          />
+          <input
+            type="file"
+            class="file-input"
+            (change)="onOPTReceiptSelected($event)"
+            #OPTReceiptUpload
+          />
+
+          <button
+            [disabled]="status === 'Pending' || status==='Rejected'"
+            type="button"
+            mat-mini-fab
+            color="primary"
+            matSuffix
+            class="upload-btn"
+            (click)="OPTReceiptUpload.click()"
+          >
+            <mat-icon>attach_file</mat-icon>
+          </button>
+        </mat-form-field>
+      </td>
+      <td
+        *ngIf="
+          applicationForm.get('immigration.isCitizenOrPr')?.value === 'false'
+        "
+      >
+        <mat-form-field class="full-width">
+          <mat-label>Enter start/end date</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input
+              matStartDate
+              placeholder="Start date"
+              formControlName="start"
+            />
+            <input matEndDate placeholder="End date" formControlName="end" />
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="license">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Driver's license</mat-label>
+          <mat-select formControlName="hasLicense">
+            <mat-option value="true">I have one</mat-option>
+            <mat-option value="false"
+              >I don't have a driver's license</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('license.hasLicense')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>license number</mat-label>
+          <input type="text" matInput formControlName="number" />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('license.hasLicense')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>expiration date</mat-label>
+          <input matInput formControlName="exp" [matDatepicker]="picker" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
+
+      <td *ngIf="applicationForm.get('license.hasLicense')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <input
+            type="text"
+            matInput
+            [readonly]="isReadonly"
+            formControlName="dl_doc"
+            />
+          <input
+            type="file"
+            class="file-input"
+            (change)="onDriverLicenseSelected($event)"
+            #DriverLicenseUpload
+          />
+          <button
+            [disabled]="status === 'Pending'|| status==='Rejected'"
+            type="button"
+            mat-mini-fab
+            color="primary"
+            matSuffix
+            class="upload-btn"
+            (click)="DriverLicenseUpload.click()"
+          >
+            <mat-icon>attach_file</mat-icon>
+          </button>
+
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="ref">
+      <td>
+        <mat-form-field class="full-width">
+          <mat-label>Reference</mat-label>
+          <mat-select formControlName="hasRef">
+            <mat-option value="true">I have one</mat-option>
+            <mat-option value="false">I don't have reference</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="ref">
+      <td *ngIf="applicationForm.get('ref.hasRef')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="fname" />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('ref.hasRef')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>Middle name</mat-label>
+          <input matInput formControlName="mname" />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('ref.hasRef')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName="lname" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr formGroupName="ref">
+      <td *ngIf="applicationForm.get('ref.hasRef')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('ref.hasRef')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </td>
+      <td *ngIf="applicationForm.get('ref.hasRef')?.value === 'true'">
+        <mat-form-field class="full-width">
+          <mat-label>Relationship</mat-label>
+          <input matInput formControlName="relationship" />
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td><h3>Add Emergency Contacts</h3></td>
+      <td colspan="2">
+        <button
+          [disabled]="status === 'Pending'"
+          type="button"
+          style="margin-left: 20px"
+          mat-mini-fab
+          color="accent"
+          (click)="addEmergencyContact()"
+          aria-label="Example icon button with a plus one icon"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </td>
+    </tr>
+    <ng-container
+      formArrayName="emergency"
+      *ngFor="
+        let emergencyContact of getEmergencyContacts().controls;
+        let i = index
+      "
+    >
+      <tr [formGroupName]="i">
+        <td>
+          <mat-form-field class="full-width"
+            ><input formControlName="fname" matInput placeholder="First Name"
+          /></mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width">
+            <input matInput formControlName="lname" placeholder="Last Name"
+          /></mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width"
+            ><input matInput formControlName="mname" placeholder="Middle Name"
+          /></mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width"
+            ><input matInput formControlName="phone" placeholder="Phone"
+          /></mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width"
+            ><input matInput formControlName="email" placeholder="Email"
+          /></mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="full-width"
+            ><input
+              matInput
+              formControlName="relationship"
+              placeholder="Relationship"
+          /></mat-form-field>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+  <h4
+    *ngIf="
+      ProfilePictureFileUrl || OPTReceiptFileName || DriverLicenseFileUrl
+    "
+  >
+    Uploaded files:
+  </h4>
+  <mat-list role="list">
+    <mat-list-item *ngIf="ProfilePictureFileUrl" role="listitem">{{
+      ProfilePictureFileUrl
+    }}</mat-list-item>
+    <mat-list-item *ngIf="OPTReceiptFileName" role="listitem">{{
+      OPTReceiptFileName
+    }}</mat-list-item>
+    <mat-list-item *ngIf="DriverLicenseFileUrl" role="listitem">{{
+      DriverLicenseFileUrl
+    }}</mat-list-item>
+  </mat-list>
+
+  <button
+    [disabled]="status === 'Pending'"
+    mat-raised-button
+    color="primary"
+    type="submit"
+  >
+    Submit
+  </button>
+  <span *ngIf="invalidform" style="color: red">
+    Please fill up all required*</span
+  >
+</form>

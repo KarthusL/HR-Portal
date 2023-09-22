@@ -1,0 +1,16 @@
+<body>
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="text-center row">
+            <div class=" col-md-6">
+                <img src={{errorObj.img}} alt='This is an image of the error code {{errorCode}}'
+                    class="img-fluid">
+            </div>
+            <div class=" col-md-6 mt-5">
+                <p class="fs-3 error-title"> <span class="text-danger">Opps!</span> {{errorCode}}: {{errorObj.title}}</p>
+                <p class="lead error-description">
+                    {{errorObj.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,28 @@
+<main class="container-fluid mt-3">
+  <nav>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <button (click)="setDisplay('view')" [class.active]="isActive('view')" class="nav-link">View Housing</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="setDisplay('manage')" [class.active]="isActive('manage')" class="nav-link">Manage Housing</button>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="row mt-3">
+    <aside class="col-lg-4 col-md-6">
+      <app-housing-list [display]="display"></app-housing-list>
+    </aside>
+    <aside class="col-lg-8 col-md-6" *ngIf="isActive('view'); else addHousing">
+      <app-housing-display></app-housing-display>
+    </aside>
+
+    <ng-template #addHousing>
+      <aside class="col-lg-8 col-md-6">
+        <h2>Add New Housing</h2>
+        <app-add-housing-form></app-add-housing-form>
+      </aside>
+    </ng-template>
+  </section>
+</main>

@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h1 class="text-center">Employee Profiles</h1>
+    <div class="form-group">
+      <div class="d-flex justify-content-center">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="searchOptions" id="firstName" value="fname" (click)="updateSearchField('fname')" checked>
+          <label class="form-check-label" for="firstName">First Name</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="searchOptions" id="middleName" value="mname" (click)="updateSearchField('mname')">
+          <label class="form-check-label" for="middleName">Middle Name</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="searchOptions" id="lastName" value="lname" (click)="updateSearchField('lname')">
+          <label class="form-check-label" for="lastName">Last Name</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="searchOptions" id="preferredName" value="pname" (click)="updateSearchField('pname')">
+          <label class="form-check-label" for="preferredName">Preferred Name</label>
+        </div>
+      </div>
+      <input #searchBox id="search-box" (input)="search(searchBox.value)" class="form-control mt-3" placeholder="Search employee..." />
+    </div>
+    <div class="row mt-5">
+      <div *ngFor="let employee of employees" class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h2 class="card-title"><a [routerLink]="['/hr/employee-profiles', employee.email]">{{employee.fname}} {{employee.mname}} {{employee.lname}}</a></h2>
+            <p class="card-text">Preferred Name: {{employee.pname}}</p>
+            <p class="card-text">SSN: {{employee.ssn}}</p>
+            <p class="card-text">Work Authorization Title: {{employee.citizen_status}}</p>
+            <p class="card-text">Phone Number: {{employee.cell_phone}}</p>
+            <p class="card-text">Email: {{employee.email}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="!employees?.length" class="text-center">No records found</p>
+</div>

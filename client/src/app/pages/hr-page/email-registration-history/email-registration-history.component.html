@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2 class="text-center">Registration Email History</h2>
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Name</th>
+          <!-- <th>Link</th> -->
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of emailHistory">
+          <td>{{user.email}}</td>
+          <td>{{user.name}}</td>
+          <!-- <td><a href="{{user.link}}" target="_blank">Link</a></td> -->
+          <td>{{user.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

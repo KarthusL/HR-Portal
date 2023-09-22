@@ -1,0 +1,40 @@
+<div class="container" *ngIf="(selectedHouse$ | async) as house">
+  <div class="row">
+    <div class="col-lg-6">
+      <h2>Current Tenants</h2>
+      <div *ngFor="let tenant of house.tenant">
+        <div class="card">
+          <div class="card-header">
+            <a [routerLink]="['/hr/employee-profiles', tenant.email]">
+              {{tenant.fname}} {{tenant.lname}}
+            </a>
+          </div>
+          <div class="card-body">
+            <h5>Phone Number: {{tenant.cell_phone}}</h5>
+            <h5>Email: {{tenant.email}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h2>Facility Information</h2>
+      <div class="card">
+        <div class="card-header">
+          Furniture Count
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Beds: {{house.furniture?.beds}}</li>
+          <li class="list-group-item">Mattresses: {{house.furniture?.mattresses}}</li>
+          <li class="list-group-item">Tables: {{house.furniture?.tables}}</li>
+          <li class="list-group-item">Chairs: {{house.furniture?.chairs}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Reports</h2>
+    <div>
+      <app-hr-facilty-report-card [house]="house" [user]="user" [reports]="house.reports"></app-hr-facilty-report-card>
+    </div>
+  </div>
+</div>

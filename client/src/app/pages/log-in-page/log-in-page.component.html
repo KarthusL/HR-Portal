@@ -1,0 +1,27 @@
+<div class="login-container">
+  <ng-container *ngIf="errorMessage">
+    <mat-error>{{errorMessage}}</mat-error>
+  </ng-container>
+  <mat-card>
+    <h1 mat-headline class="login-header">Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput id="username" type="text" formControlName="username">
+        <mat-error *ngIf="loginForm.get('username')?.errors && loginForm.get('username')?.touched">
+          Username is required.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput id="password" type="password" formControlName="password">
+        <mat-error *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+          Password is required.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Log In</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,20 @@
+  <div *ngIf="houses$ | async as houses">
+    <h2>Company Housing</h2>
+    <div class="overflow-container">
+      <div class="card" *ngFor="let house of houses">
+        <div class="card-header">
+          {{house.address.street}} {{house.address.city}}, {{house.address.state}} {{house.address.zip}}
+        </div>
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <h5 class="card-title">Landlord: {{house.landlord?.fname}} {{house.landlord?.lname}} - {{house.landlord?.phone}} - {{house.landlord?.email}}</h5>
+            <button *ngIf="display === 'view'; else deleteButton" (click)="onViewDetails(house)" class="btn btn-primary btn-sm">Summary View</button>
+            <ng-template #deleteButton>
+              <button (click)="onDeleteHouse(house._id)" class="btn btn-danger btn-sm">Remove Housing</button>
+            </ng-template>
+          </div>
+          <h5 class="card-title"># of occupants: {{house.tenant.length}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>

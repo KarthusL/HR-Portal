@@ -1,0 +1,23 @@
+<div class="container">
+    <h1 class="text-center mt-5">Visa Status Management</h1>
+
+    <div class="btn-group mt-5" role="group">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        [class.active]="selected === 'inprogress'"
+        (click)="selected = 'inprogress'">In progress
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        [class.active]="selected === 'all'"
+        (click)="selected = 'all'">All
+      </button>
+    </div>
+
+    <div class="mt-5">
+      <app-visa-manage-inprogress *ngIf="selected === 'inprogress'"></app-visa-manage-inprogress>
+      <app-visa-manage-all *ngIf="selected === 'all'"></app-visa-manage-all>
+    </div>
+</div>

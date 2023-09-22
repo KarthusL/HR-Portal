@@ -1,0 +1,25 @@
+{
+  "name": "hr-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run server\" \"cd client && npm run client\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm run client",
+    "server": "cd server && npm run server",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-zhenhao/HR-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/team-zhenhao/HR-Project/issues"
+  },
+  "homepage": "https://github.com/team-zhenhao/HR-Project#readme"
+}

@@ -1,0 +1,53 @@
+<p>
+  <mat-toolbar color="accent">
+    <span>Register</span>
+  </mat-toolbar>
+</p>
+
+<div class="container">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <mat-form-field color="accent">
+      <mat-label>Enter your email</mat-label>
+      <input
+        matInput
+        placeholder="example@example.com"
+        formControlName="email"
+        required
+      />
+      <mat-error *ngIf="registrationForm.controls.email.invalid">{{
+        getEmailErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter your username</mat-label>
+      <input
+        matInput
+        placeholder="John123"
+        formControlName="username"
+        required
+      />
+      <mat-error *ngIf="registrationForm.controls.username.invalid">{{
+        getUsernameErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter your password</mat-label>
+      <input
+        matInput
+        placeholder="password"
+        formControlName="password"
+        required
+      />
+      <mat-error *ngIf="registrationForm.controls.password.invalid">{{
+        getPasswordErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+    >
+      Register
+    </button>
+  </form>
+</div>

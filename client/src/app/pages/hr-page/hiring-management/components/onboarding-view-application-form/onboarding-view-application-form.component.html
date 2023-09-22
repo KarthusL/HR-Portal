@@ -1,0 +1,21 @@
+<form>
+    <app-employee-detail-card [email]="email"></app-employee-detail-card>
+
+    <div class="form-group d-flex justify-content-center" *ngIf="status === 'Pending'">
+        <button type="button" class="btn btn-primary mx-2" (click)="onAccept()" [disabled]="isDisabled">Accept</button>
+        <button type="button" class="btn btn-danger mx-2" (click)="onReject()" [disabled]="isDisabled">Reject</button>
+    </div>
+
+    <div *ngIf="feedbackVisible" class="form-group">
+        <label for="feedback">Reject feedback:</label>
+        <textarea #content1 id="feedback" name="feedback" [(ngModel)]="feedback" class="form-control"></textarea>
+        <div *ngIf="feedbackWarning" class="form-group mt-3 text-danger" style="color: red;">
+            {{ feedbackWarning }}
+        </div>
+        <button type="button" class="btn btn-primary mt-2" (click)="onSubmitFeedback(content1.value)">Submit</button>
+    </div>
+
+    <div *ngIf="message" class="form-group mt-3 text-center">
+        {{ message }}
+    </div>
+</form>

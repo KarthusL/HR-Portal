@@ -1,0 +1,68 @@
+
+
+  <div class="card" *ngFor="let report of paginatedReports">
+      <div class="card-header d-flex justify-content-between">
+        Subject: {{ report.title }}
+        <div>
+          {{ report.ts | date }}
+        </div>
+      </div>
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex flex-row justify-content-between mb-3">
+        <p class="card-text flex-grow-1">Status: {{ report.status }}</p>
+        <span *ngIf="user?.role === 'hr' && report.status !== 'Closed'">
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example" (change)="onChange($event, report._id, report.status)">
+            <option selected>Change Report Status</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Closed">Closed</option>
+          </select>
+        </span>
+      </div>
+      <p class="card-text flex-grow-1">Description: {{ report.desc }}</p>
+      <ul class="list-group mt-3">
+        <li class="list-group-item" *ngFor="let comment of report.comments">
+          <div class="d-flex justify-content-between">
+            <div class="flex-grow-1" *ngIf="editMode !== comment._id; else edit">
+              <form>
+                <strong>{{ comment.created_by }}:</strong> {{ comment.desc }}
+                <button (click)="toggleEditMode(comment._id)" type="submit" class="btn btn-link text-primary" *ngIf="user?.uname === comment.created_by">edit</button>
+              </form>
+            </div>
+            <ng-template #edit>
+              <form>
+                <input type="text" name="editedComment" id="editedComment" [(ngModel)]="editedComment" class="form-control">
+                <button (click)="saveComment(comment._id, report._id)" type="submit" class="btn btn-primary btn-small">Save</button>
+              </form>
+            </ng-template>
+            <div>
+              {{ comment.ts | date: 'medium' }}
+            </div>
+          </div>
+        </li>
+        <ng-container *ngIf="report.status !== 'Closed'">
+          <form>
+            <input type="text" name="addComment" id="addComment" [(ngModel)]="addComment" class="form-control border border-dark mt-3">
+            <button (click)="postComment(report._id)" type="submit" class="btn btn-primary btn-small">Post Comment</button>
+          </form>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="previousPage()" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li class="page-item" *ngFor="let page of getPaginationArray()">
+        <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="nextPage()" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>

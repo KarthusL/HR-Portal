@@ -1,0 +1,213 @@
+<mxfile host="65bd71144e">
+    <diagram id="h9Yfr2VO3A21zHWBfzst" name="Page-1">
+        <mxGraphModel dx="1129" dy="1076" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-4" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="System&lt;br&gt;&lt;br&gt;After Login" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-67.5" y="-40" width="145" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-8" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="3" target="GwirV1cBtMvRw_F3Jgas-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Employee" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-280" y="-40" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-63" style="edgeStyle=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="4" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="HR" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="-40" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-18" style="edgeStyle=none;html=1;" parent="1" source="GwirV1cBtMvRw_F3Jgas-6" target="GwirV1cBtMvRw_F3Jgas-9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-6" value="&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;filling basic info&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;submit profile/dl (optional)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;(re)submit receipt (if OPT)&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-360" y="80" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-19" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-9" target="GwirV1cBtMvRw_F3Jgas-17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-9" value="visa_status: pending&lt;br&gt;next_file: receipt (as it has not been approved)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-72.5" y="80" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-11" value="&lt;ul&gt;&lt;li&gt;If rejected, visa_status: waiting&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="80" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-16" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-11" target="GwirV1cBtMvRw_F3Jgas-6" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="130" y="140" as="sourcePoint"/>
+                        <mxPoint x="-210" y="50" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="50"/>
+                            <mxPoint x="-70" y="50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-17" value="&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;If aporoved&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="120" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-26" value="" style="edgeStyle=none;html=1;" parent="1" source="GwirV1cBtMvRw_F3Jgas-21" target="GwirV1cBtMvRw_F3Jgas-25" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-240" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-21" value="visa_status: waiting&lt;br&gt;next_file: EAD" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="200" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-24" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-17" target="GwirV1cBtMvRw_F3Jgas-21" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="90" y="250" as="sourcePoint"/>
+                        <mxPoint x="140" y="200" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-28" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-25" target="GwirV1cBtMvRw_F3Jgas-27" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-25" value="&lt;ol&gt;&lt;li&gt;(re)submit EAD card&lt;/li&gt;&lt;/ol&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-360" y="320" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-41" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-27" target="GwirV1cBtMvRw_F3Jgas-30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-27" value="visa_status: pending&lt;br&gt;next_file: EAD" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="320" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-29" value="&lt;ul&gt;&lt;li&gt;If rejected, visa_status: waiting&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="320" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-30" value="&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;If aporoved&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="360" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-31" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-29" target="GwirV1cBtMvRw_F3Jgas-25" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="290" as="sourcePoint"/>
+                        <mxPoint x="-200" y="300" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="290"/>
+                            <mxPoint x="-75" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-32" value="" style="edgeStyle=none;html=1;" parent="1" source="GwirV1cBtMvRw_F3Jgas-33" target="GwirV1cBtMvRw_F3Jgas-36" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-240" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-33" value="visa_status: waiting&lt;br&gt;next_file: I-983" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="440" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-34" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-30" target="GwirV1cBtMvRw_F3Jgas-33" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="260" y="400" as="sourcePoint"/>
+                        <mxPoint x="140" y="440" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-35" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-36" target="GwirV1cBtMvRw_F3Jgas-37" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-36" value="&lt;ol&gt;&lt;li&gt;(re)submit I-983&lt;/li&gt;&lt;/ol&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-360" y="560" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-42" value="" style="edgeStyle=none;html=1;" parent="1" source="GwirV1cBtMvRw_F3Jgas-37" target="GwirV1cBtMvRw_F3Jgas-39" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-37" value="visa_status: pending&lt;br&gt;next_file: I-983" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="560" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-38" value="&lt;ul&gt;&lt;li&gt;If rejected, visa_status: waiting&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="560" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-39" value="&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;If aporoved&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="600" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-40" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-38" target="GwirV1cBtMvRw_F3Jgas-36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="530" as="sourcePoint"/>
+                        <mxPoint x="-200" y="540" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="530"/>
+                            <mxPoint x="-75" y="530"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-43" value="" style="edgeStyle=none;html=1;" parent="1" source="GwirV1cBtMvRw_F3Jgas-44" target="GwirV1cBtMvRw_F3Jgas-47" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="-240" y="720"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-44" value="visa_status: waiting&lt;br&gt;next_file: I-20" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="680" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-45" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-39" target="GwirV1cBtMvRw_F3Jgas-44" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="260" y="640" as="sourcePoint"/>
+                        <mxPoint x="140" y="680" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="720"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-46" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-47" target="GwirV1cBtMvRw_F3Jgas-49" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-47" value="&lt;ol&gt;&lt;li&gt;(re)submit I-20&lt;/li&gt;&lt;/ol&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="-360" y="800" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-48" value="" style="edgeStyle=none;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-49" target="GwirV1cBtMvRw_F3Jgas-51" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-49" value="visa_status: pending&lt;br&gt;next_file: I-20" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="800" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-50" value="&lt;ul&gt;&lt;li&gt;If rejected, visa_status: waiting&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="800" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-51" value="&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;If aporoved&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="840" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-52" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-50" target="GwirV1cBtMvRw_F3Jgas-47" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="290" y="770" as="sourcePoint"/>
+                        <mxPoint x="-200" y="780" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="770"/>
+                            <mxPoint x="-75" y="770"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-54" value="visa_status: approved&lt;br&gt;next_file: done" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="920" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="GwirV1cBtMvRw_F3Jgas-55" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="GwirV1cBtMvRw_F3Jgas-51" target="GwirV1cBtMvRw_F3Jgas-54" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="260" y="880" as="sourcePoint"/>
+                        <mxPoint x="140" y="920" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="260" y="960"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

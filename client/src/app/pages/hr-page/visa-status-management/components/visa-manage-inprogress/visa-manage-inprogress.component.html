@@ -1,0 +1,65 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name and Email</th>
+        <th scope="col">Work Authorization</th>
+        <th scope="col">Next Step</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersData">
+        <td>{{user.fname}} {{user.mname}} {{user.lname}} Email:{{user.email}}</td>
+        <td>
+          <p><strong>Title:</strong> {{user.visa.type}}</p>
+          <p><strong>Start Date:</strong> {{(user.visa.start | date:'full')}}</p>
+          <p><strong>End Date:</strong> {{(user.visa.end | date:'full')}}</p>
+          <p><strong>Days Remaining:</strong> {{user.visa.remain}}</p>
+        </td>
+        <td>
+          <p *ngIf="user.next_file === 'receipt' && user.visa_status === 'waiting'">
+            Have sent registration token: waiting for employee to submit onboarding application
+          </p>
+          <p *ngIf="user.visa_status === 'waiting' && user.next_file !== 'receipt'">
+            Waiting for employee to upload {{user.next_file}}
+          </p>
+          <p *ngIf="user.visa_status === 'pending'">
+            Waiting for HR to approve {{user.next_file}}
+          </p>
+          <p *ngIf="user.visa_status === 'rejected'">
+            HR rejected. Waiting for employee to upload {{user.next_file}} again
+          </p>
+        </td>
+        <td>
+            <div *ngIf="user.visa_status==='waiting' || user.visa_status==='rejected'">
+              <button [disabled]="user.notificationSent" (click)="sendNotification(user)">
+                Send Notification
+              </button>
+              <p *ngIf="user.notificationSent">Email have sent</p>
+            </div>
+            <div *ngIf="user.visa_status==='pending'">
+              <p>View PDF: {{user.next_file}}</p>
+              <button
+              mat-icon-button
+              (click)="downloadFile(user.next_file,user.email)"
+              aria-label="download"><mat-icon>download</mat-icon></button>
+              <br>
+
+              <button
+              mat-icon-button
+              (click)="previewFile(user.next_file,user.email)"
+              type="button"
+              aria-label="in new tab icon"><mat-icon>open_in_new</mat-icon></button>
+              <br>
+              <button [disabled]="user.actionTaken" (click)="handleAction(user, 'Approve')">Approve</button>
+              <button [disabled]="user.actionTaken" (click)="handleAction(user, 'Reject')">Reject</button>
+              <div *ngIf="user.actionTaken && user.showFeedback && !user.feedbackSent">
+                <label>Send feedback to employee:</label>
+                <textarea [(ngModel)]="user.feedback"></textarea>
+                <button (click)="sendFeedback(user)">Submit</button>
+              </div>
+            </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>

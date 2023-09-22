@@ -1,0 +1,82 @@
+<div class="card shadow mb-4" style="width: 80%;">
+    <img class="card-img-top half-width-center" [src]="employee.pic ? employee.pic : defaultImage" alt="Card image cap">
+    <div class="card-body">
+      <div class="card-text">
+        <dl class="row">
+          <dt class="col-sm-4 text-primary">Last Name:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.lname}">{{employee.lname ? employee.lname : '(empty)'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Middle Name:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.mname}">{{employee.mname ? employee.mname : '(empty)'}}</dd>
+
+          <dt class="col-sm-4 text-primary">First Name:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.fname}">{{employee.fname ? employee.fname : '(empty)'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Preferred Name:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.pname}">{{employee.pname ? employee.pname : '(empty)'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Email:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.email}">{{employee.email ? employee.email : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Status:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.status}">{{employee.status ? employee.status : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">SSN:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.ssn}">{{employee.ssn ? employee.ssn : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">DOB:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.dob}">{{employee.dob ? (employee.dob | date:'full') : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Address:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.cur_add}">{{employee.cur_add ? (employee.cur_add.apt ? employee.cur_add.apt : 'Not applicable')+', '+ (employee.cur_add.street ? employee.cur_add.street : 'Not applicable')+', '+ (employee.cur_add.city ? employee.cur_add.city : 'Not applicable')+', '+ (employee.cur_add.state ? employee.cur_add.state : 'Not applicable')+', '+ (employee.cur_add.zip ? employee.cur_add.zip : 'Not applicable') : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Cell Phone:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.cell_phone}">{{employee.cell_phone ? employee.cell_phone : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Citizen Stauts:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.citizen_status}">{{employee.citizen_status ? employee.citizen_status : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Visa:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.visa}">
+              <ul [ngClass]="{'text-primary': employee.visa}">
+                  <li>Type: {{employee.visa && employee.visa.type ? employee.visa.type : 'Not applicable'}}</li>
+                  <li>Start: {{employee.visa && employee.visa.start ? (employee.visa.start | date:'full') : 'Not applicable'}}</li>
+                  <li>End: {{employee.visa && employee.visa.end ? (employee.visa.end | date:'full') : 'Not applicable'}}</li>
+              </ul>
+          </dd>
+
+          <dt class="col-sm-4 text-primary">Driver's License:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.dl}">{{employee.dl ? (employee.dl.number ? employee.dl.number : 'Not applicable')+', Expiry: '+(employee.dl.exp ? employee.dl.exp : 'Not applicable') : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Car:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.car}">{{employee.car ? (employee.car.make ? employee.car.make : 'Not applicable')+', '+(employee.car.model ? employee.car.model : 'Not applicable')+', '+(employee.car.color ? employee.car.color : 'Not applicable') : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Reference:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.ref}">{{employee.ref ? (employee.ref.fname ? employee.ref.fname : '')+' '+ (employee.ref.mname ? employee.ref.mname : '')+' '+ (employee.ref.lname ? employee.ref.lname : '')+', '+ (employee.ref.phone ? employee.ref.phone : 'Not applicable')+', '+ (employee.ref.email ? employee.ref.email : 'Not applicable')+', '+ (employee.ref.relationship ? employee.ref.relationship : 'Not applicable') : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Emergency Contact:</dt>
+          <dd class="col-sm-8">
+            <ul *ngFor="let emg of employee.emergency">
+              <li>
+                <span [ngClass]="{'text-grey': !emg.fname && !emg.mname && !emg.lname && !emg.phone && !emg.email && !emg.relationship}">
+                  {{emg.fname ? emg.fname : ''}} {{emg.mname ? emg.mname : ''}} {{emg.lname ? emg.lname : ''}}, {{emg.phone ? emg.phone : 'Not applicable'}}, {{emg.email ? emg.email : 'Not applicable'}}, {{emg.relationship ? emg.relationship : 'Not applicable'}}
+                </span>
+              </li>
+            </ul>
+          </dd>
+
+          <dt class="col-sm-4 text-primary">Visa Status:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.visa_status}">{{employee.visa_status ? employee.visa_status : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Next File:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.next_file}">{{employee.next_file ? employee.next_file : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Visa Status Message:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.visa_status_msg}">{{employee.visa_status_msg ? employee.visa_status_msg : 'Not applicable'}}</dd>
+
+          <dt class="col-sm-4 text-primary">Message:</dt>
+          <dd class="col-sm-8" [ngClass]="{'text-grey': !employee.msg}">{{employee.msg ? employee.msg : 'Not applicable'}}</dd>
+        </dl>
+      </div>
+    </div>
+</div>

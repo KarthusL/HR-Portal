@@ -1,0 +1,19 @@
+<h2 class="mt-5">Onboarding Application Review</h2>
+
+<div class="btn-group" role="group" aria-label="Status">
+    <button type="button" class="btn btn-secondary" [class.active]="activeStatus === 'Pending'" (click)="filterPeople('Pending')">Pending</button>
+    <button type="button" class="btn btn-secondary" [class.active]="activeStatus === 'Rejected'" (click)="filterPeople('Rejected')">Rejected</button>
+    <button type="button" class="btn btn-secondary" [class.active]="activeStatus === 'Approved'" (click)="filterPeople('Approved')">Approved</button>
+</div>
+
+<div class="card mt-3" *ngFor="let person of people">
+    <div class="card-body">
+        <h5 class="card-title">{{person.fname}} {{person.lname}}</h5>
+        <p class="card-text">{{person.email}}</p>
+
+        <button class="btn btn-primary" (click)="toggleForm(person.email)">
+            {{person.showForm ? 'Hide the Form' : 'View Application'}}
+        </button>
+        <app-onboarding-view-application-form *ngIf="person.showForm" [email]="person.email" [status]="person.status"></app-onboarding-view-application-form>
+    </div>
+</div>
