@@ -1,15 +1,5 @@
 # HR Project
 
-This project was finished by Zhenhao, Yifu, Thinh, Peter, and Lingrui. We divide this project into front-end and back-end and develop them separately.
-
-Zhenhao designs this project's file and data structure, and be responsible for code review.
-
-Thinh, Peter, and Lingrui are responsible for front-end development.
-
-Zhenhao and Yifu are responsible for back-end development.
-
-If you want to see details, please go to the related folder and check its [README.md](./README.md)
-
 ## 　 Development Version
 
 #### 1.1 　 Install environment
